@@ -7,17 +7,16 @@
  * @module get-own-enumerable-keys-x
  */
 
-'use strict';
+const toObject = require('to-object-x');
+const objectKeys = require('object-keys-x');
+const getOEPS = require('get-own-enumerable-property-symbols-x');
 
-var toObject = require('to-object-x');
-var objectKeys = require('object-keys-x');
-var getOEPS = require('get-own-enumerable-property-symbols-x');
-var concat = Array.prototype.concat;
+const {concat} = Array.prototype;
 
 /**
  * This method returns only the enumerable own keys of an object.
  *
- * @param {Object} target - The target.
+ * @param {object} target - The target.
  * @throws {typeError} - If target is null or undefined.
  * @returns {Array} The enumerable own keys.
  * @example
@@ -38,6 +37,7 @@ var concat = Array.prototype.concat;
  * getOwnEnumerableKeys(obj); // ['bar', 'foo', symbol]
  */
 module.exports = function getOwnNonEnumerableKeys(target) {
-  var object = toObject(target);
+  const object = toObject(target);
+
   return concat.call(objectKeys(object), getOEPS(object));
 };
