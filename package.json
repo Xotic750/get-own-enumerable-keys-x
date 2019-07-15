@@ -53,7 +53,7 @@
   "dependencies": {
     "get-own-enumerable-property-symbols-x": "^1.0.0",
     "object-keys-x": "^2.5.0",
-    "to-object-x": "^2.0.0"
+    "to-object-x": "^2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
