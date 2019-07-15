@@ -1,28 +1,6 @@
-let getOwnEnumerableKeys;
+import getOwnEnumerableKeys from '../src/get-own-enumerable-keys-x';
 
-if (typeof module === 'object' && module.exports) {
-  require('es5-shim');
-  require('es5-shim/es5-sham');
-
-  if (typeof JSON === 'undefined') {
-    JSON = {};
-  }
-
-  require('json3').runInContext(null, JSON);
-  require('es6-shim');
-  const es7 = require('es7-shim');
-  Object.keys(es7).forEach(function(key) {
-    const obj = es7[key];
-
-    if (typeof obj.shim === 'function') {
-      obj.shim();
-    }
-  });
-  getOwnEnumerableKeys = require('../../index.js');
-} else {
-  getOwnEnumerableKeys = returnExports;
-}
-
+/* eslint-disable-next-line compat/compat */
 const hasSymbolSupport = typeof Symbol === 'function' && typeof Symbol('') === 'symbol';
 const ifSymbolsIt = hasSymbolSupport ? it : xit;
 
@@ -36,24 +14,29 @@ const ifDefinesNonEnumerable = definedNonEnumerable ? it : xit;
 
 describe('getOwnEnumerableKeys', function() {
   it('is a function', function() {
+    expect.assertions(1);
     expect(typeof getOwnEnumerableKeys).toBe('function');
   });
 
   it('should throw when target is null or undefined', function() {
+    expect.assertions(3);
     expect(function() {
       getOwnEnumerableKeys();
-    }).toThrow();
+    }).toThrowErrorMatchingSnapshot();
 
     expect(function() {
+      /* eslint-disable-next-line no-void */
       getOwnEnumerableKeys(void 0);
-    }).toThrow();
+    }).toThrowErrorMatchingSnapshot();
 
     expect(function() {
       getOwnEnumerableKeys(null);
-    }).toThrow();
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('should return enumerable own keys', function() {
+    expect.assertions(1);
+    /* eslint-disable-next-line lodash/prefer-noop */
     const objects = [1, true, 'abc', [], {bar: 1, foo: 2}, /ab/, new Date(), function() {}];
 
     const expected = objects.map(function(object) {
@@ -66,6 +49,7 @@ describe('getOwnEnumerableKeys', function() {
   });
 
   ifDefinesNonEnumerable('should return enumerable own keys', function() {
+    expect.assertions(1);
     const objects = [
       1,
       true,
@@ -76,6 +60,7 @@ describe('getOwnEnumerableKeys', function() {
       }),
       /ab/,
       new Date(),
+      /* eslint-disable-next-line lodash/prefer-noop */
       function() {},
     ];
 
@@ -89,12 +74,15 @@ describe('getOwnEnumerableKeys', function() {
   });
 
   ifSymbolsIt('should return enumerable own keys and symbols', function() {
+    expect.assertions(1);
+    /* eslint-disable-next-line compat/compat */
     const s1 = Symbol('first');
     const obj = Object.defineProperty({bar: 1, foo: 2}, s1, {
       enumerable: true,
       value: 'first',
     });
 
+    /* eslint-disable-next-line compat/compat */
     const s2 = Symbol('second');
     Object.defineProperty(obj, s2, {
       enumerable: false,
@@ -102,8 +90,9 @@ describe('getOwnEnumerableKeys', function() {
     });
 
     const keys = Object.keys(obj);
+    /* eslint-disable-next-line compat/compat */
     const syms = Object.getOwnPropertySymbols(obj).filter(function(sym) {
-      // eslint-disable-next-line no-prototype-builtins
+      /* eslint-disable-next-line no-prototype-builtins */
       return obj.propertyIsEnumerable(sym);
     });
 

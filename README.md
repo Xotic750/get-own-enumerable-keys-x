@@ -21,15 +21,13 @@
 <a name="module_get-own-enumerable-keys-x"></a>
 
 ## get-own-enumerable-keys-x
+
 Like Reflect.ownKeys but gets only enumerable properties.
 
-**Version**: 1.2.0  
-**Author**: Xotic750 <Xotic750@gmail.com>  
-**License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
-**Copyright**: Xotic750  
 <a name="exp_module_get-own-enumerable-keys-x--module.exports"></a>
 
 ### `module.exports(target)` ⇒ <code>Array</code> ⏏
+
 This method returns only the enumerable own keys of an object.
 
 **Kind**: Exported function  
@@ -38,26 +36,26 @@ This method returns only the enumerable own keys of an object.
 
 - <code>typeError</code> - If target is null or undefined.
 
-
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
 | target | <code>Object</code> | The target. |
 
-**Example**  
+**Example**
+
 ```js
-var getOwnEnumerableKeys = require('get-own-enumerable-keys-x');
+import getOwnEnumerableKeys from 'get-own-enumerable-keys-x';
 
-var obj = { bar: 1, foo: 2 };
+const obj = {bar: 1, foo: 2};
 Object.defineProperty(obj, Symbol('first'), {
-  enumerable: false
-  value: 'first'
+  enumerable: false,
+  value: 'first',
 });
 
-var symbol = Symbol('second');
+const symbol = Symbol('second');
 Object.defineProperty(obj, symbol, {
-  enumerable: true
-  value: 'second'
+  enumerable: true,
+  value: 'second',
 });
 
-getOwnEnumerableKeys(obj); // ['bar', 'foo', symbol]
+console.log(getOwnEnumerableKeys(obj)); // ['bar', 'foo', symbol]
 ```

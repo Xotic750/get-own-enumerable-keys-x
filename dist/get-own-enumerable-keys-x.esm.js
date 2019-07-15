@@ -1,9 +1,7 @@
 import toObject from 'to-object-x';
 import objectKeys from 'object-keys-x';
 import getOEPS from 'get-own-enumerable-property-symbols-x';
-
-const {concat} = [];
-
+var concat = [].concat;
 /**
  * This method returns only the enumerable own keys of an object.
  *
@@ -11,8 +9,10 @@ const {concat} = [];
  * @throws {TypeError} - If target is null or undefined.
  * @returns {Array} The enumerable own keys.
  */
-export default function getOwnNonEnumerableKeys(target) {
-  const object = toObject(target);
 
+export default function getOwnNonEnumerableKeys(target) {
+  var object = toObject(target);
   return concat.call(objectKeys(object), getOEPS(object));
 }
+
+//# sourceMappingURL=get-own-enumerable-keys-x.esm.js.map
