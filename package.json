@@ -1,6 +1,6 @@
 {
   "name": "get-own-enumerable-keys-x",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Like Reflect.ownKeys but gets only enumerable properties.",
   "homepage": "https://github.com/Xotic750/get-own-enumerable-keys-x",
   "author": {
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "get-own-enumerable-property-symbols-x": "^2.0.0",
-    "object-keys-x": "^2.5.0",
+    "object-keys-x": "^3.0.1",
     "to-object-x": "^2.0.1"
   },
   "devDependencies": {
