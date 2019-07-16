@@ -89,7 +89,6 @@ describe('getOwnEnumerableKeys', function() {
     const keys = Object.keys(obj);
 
     const syms = Object.getOwnPropertySymbols(obj).filter(function(sym) {
-      /* eslint-disable-next-line no-prototype-builtins */
       return obj.propertyIsEnumerable(sym);
     });
 
