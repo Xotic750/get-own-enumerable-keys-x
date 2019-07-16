@@ -1,6 +1,5 @@
 import getOwnEnumerableKeys from '../src/get-own-enumerable-keys-x';
 
-/* eslint-disable-next-line compat/compat */
 const hasSymbolSupport = typeof Symbol === 'function' && typeof Symbol('') === 'symbol';
 const ifSymbolsIt = hasSymbolSupport ? it : xit;
 
@@ -25,7 +24,6 @@ describe('getOwnEnumerableKeys', function() {
     }).toThrowErrorMatchingSnapshot();
 
     expect(function() {
-      /* eslint-disable-next-line no-void */
       getOwnEnumerableKeys(void 0);
     }).toThrowErrorMatchingSnapshot();
 
@@ -36,7 +34,7 @@ describe('getOwnEnumerableKeys', function() {
 
   it('should return enumerable own keys', function() {
     expect.assertions(1);
-    /* eslint-disable-next-line lodash/prefer-noop */
+
     const objects = [1, true, 'abc', [], {bar: 1, foo: 2}, /ab/, new Date(), function() {}];
 
     const expected = objects.map(function(object) {
@@ -60,7 +58,7 @@ describe('getOwnEnumerableKeys', function() {
       }),
       /ab/,
       new Date(),
-      /* eslint-disable-next-line lodash/prefer-noop */
+
       function() {},
     ];
 
@@ -75,14 +73,13 @@ describe('getOwnEnumerableKeys', function() {
 
   ifSymbolsIt('should return enumerable own keys and symbols', function() {
     expect.assertions(1);
-    /* eslint-disable-next-line compat/compat */
+
     const s1 = Symbol('first');
     const obj = Object.defineProperty({bar: 1, foo: 2}, s1, {
       enumerable: true,
       value: 'first',
     });
 
-    /* eslint-disable-next-line compat/compat */
     const s2 = Symbol('second');
     Object.defineProperty(obj, s2, {
       enumerable: false,
@@ -90,7 +87,7 @@ describe('getOwnEnumerableKeys', function() {
     });
 
     const keys = Object.keys(obj);
-    /* eslint-disable-next-line compat/compat */
+
     const syms = Object.getOwnPropertySymbols(obj).filter(function(sym) {
       /* eslint-disable-next-line no-prototype-builtins */
       return obj.propertyIsEnumerable(sym);
