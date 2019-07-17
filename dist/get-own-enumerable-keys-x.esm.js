@@ -10,9 +10,11 @@ var concat = [].concat;
  * @returns {Array} The enumerable own keys.
  */
 
-export default function getOwnNonEnumerableKeys(target) {
+var getOwnNonEnumerableKeys = function getOwnNonEnumerableKeys(target) {
   var object = toObject(target);
   return concat.call(objectKeys(object), getOEPS(object));
-}
+};
+
+export default getOwnNonEnumerableKeys;
 
 //# sourceMappingURL=get-own-enumerable-keys-x.esm.js.map

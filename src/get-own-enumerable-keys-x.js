@@ -11,8 +11,10 @@ const {concat} = [];
  * @throws {TypeError} - If target is null or undefined.
  * @returns {Array} The enumerable own keys.
  */
-export default function getOwnNonEnumerableKeys(target) {
+const getOwnNonEnumerableKeys = function getOwnNonEnumerableKeys(target) {
   const object = toObject(target);
 
   return concat.call(objectKeys(object), getOEPS(object));
-}
+};
+
+export default getOwnNonEnumerableKeys;
