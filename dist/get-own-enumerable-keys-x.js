@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-17T17:56:51.655Z",
+  "date": "2019-07-17T19:19:53.369Z",
   "describe": "",
   "description": "Like Reflect.ownKeys but gets only enumerable properties.",
   "file": "get-own-enumerable-keys-x.js",
-  "hash": "5c27bb0f3a900a865d55",
+  "hash": "23f1fd20eea56cc3f661",
   "license": "MIT",
-  "version": "2.0.5"
+  "version": "2.0.6"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -120,7 +120,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -131,7 +131,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 var toStr = Object.prototype.toString;
-var hasSymbols = __webpack_require__(8)();
+var hasSymbols = __webpack_require__(7)();
 
 if (hasSymbols) {
 	var symToStr = Symbol.prototype.toString;
@@ -193,15 +193,6 @@ module.exports = function isPrimitive(val) {
 
 "use strict";
 
-module.exports = 9007199254740991;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var strValue = String.prototype.valueOf;
 var tryStringObject = function tryStringObject(value) {
@@ -224,7 +215,7 @@ module.exports = function isString(value) {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -248,7 +239,7 @@ module.exports = function isArguments(value) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -286,7 +277,7 @@ module.exports = supportsStandardArguments ? isStandardArguments : isLegacyArgum
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -313,17 +304,17 @@ module.exports = function isDateObject(value) {
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var slice = Array.prototype.slice;
-var isArgs = __webpack_require__(4);
+var isArgs = __webpack_require__(3);
 
 var origKeys = Object.keys;
-var keysShim = origKeys ? function keys(o) { return origKeys(o); } : __webpack_require__(11);
+var keysShim = origKeys ? function keys(o) { return origKeys(o); } : __webpack_require__(10);
 
 var originalKeys = Object.keys;
 
@@ -352,14 +343,14 @@ module.exports = keysShim;
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
 var origSymbol = global.Symbol;
-var hasSymbolSham = __webpack_require__(10);
+var hasSymbolSham = __webpack_require__(9);
 
 module.exports = function hasNativeSymbols() {
 	if (typeof origSymbol !== 'function') { return false; }
@@ -370,10 +361,10 @@ module.exports = function hasNativeSymbols() {
 	return hasSymbolSham();
 };
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(8)))
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 var g;
@@ -399,7 +390,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -448,7 +439,7 @@ module.exports = function hasSymbols() {
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -459,7 +450,7 @@ if (!Object.keys) {
 	// modified from https://github.com/es-shims/es5-shim
 	var has = Object.prototype.hasOwnProperty;
 	var toStr = Object.prototype.toString;
-	var isArgs = __webpack_require__(4); // eslint-disable-line global-require
+	var isArgs = __webpack_require__(3); // eslint-disable-line global-require
 	var isEnumerable = Object.prototype.propertyIsEnumerable;
 	var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
 	var hasProtoEnumBug = isEnumerable.call(function () {}, 'prototype');
@@ -577,7 +568,7 @@ module.exports = keysShim;
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -736,7 +727,7 @@ var isArrayFn = function iife() {
 
 
 // EXTERNAL MODULE: ./node_modules/is-arguments/index.js
-var is_arguments = __webpack_require__(5);
+var is_arguments = __webpack_require__(4);
 var is_arguments_default = /*#__PURE__*/__webpack_require__.n(is_arguments);
 
 // EXTERNAL MODULE: ./node_modules/is-symbol/index.js
@@ -771,7 +762,7 @@ var is_primitive = __webpack_require__(1);
 var is_primitive_default = /*#__PURE__*/__webpack_require__.n(is_primitive);
 
 // EXTERNAL MODULE: ./node_modules/is-date-object/index.js
-var is_date_object = __webpack_require__(6);
+var is_date_object = __webpack_require__(5);
 var is_date_object_default = /*#__PURE__*/__webpack_require__.n(is_date_object);
 
 // CONCATENATED MODULE: ./node_modules/to-boolean-x/dist/to-boolean-x.esm.js
@@ -1907,13 +1898,9 @@ var to_integer_x_esm_toInteger2018 = function toInteger2018(value) {
 /* harmony default export */ var to_integer_x_esm = (to_integer_x_esm_toInteger2018);
 
 
-// EXTERNAL MODULE: ./node_modules/max-safe-integer/index.js
-var max_safe_integer = __webpack_require__(2);
-var max_safe_integer_default = /*#__PURE__*/__webpack_require__.n(max_safe_integer);
-
 // CONCATENATED MODULE: ./node_modules/to-length-x/dist/to-length-x.esm.js
 
-
+var MAX_SAFE_INTEGER = 9007199254740991;
 /**
  * Converts `value` to an integer suitable for use as the length of an
  * array-like object. (ES2016).
@@ -1929,8 +1916,8 @@ function toLength2016(value) {
     return 0;
   }
 
-  if (len > max_safe_integer_default.a) {
-    return max_safe_integer_default.a;
+  if (len > MAX_SAFE_INTEGER) {
+    return MAX_SAFE_INTEGER;
   }
 
   return len;
@@ -1950,8 +1937,8 @@ var to_length_x_esm_toLength2018 = function toLength2018(value) {
     return 0;
   }
 
-  if (len > max_safe_integer_default.a) {
-    return max_safe_integer_default.a;
+  if (len > MAX_SAFE_INTEGER) {
+    return MAX_SAFE_INTEGER;
   }
 
   return len;
@@ -1977,7 +1964,7 @@ var hasBoxed = boxedString[0] === has_boxed_string_x_esm_string && 0 in boxedStr
 
 
 // EXTERNAL MODULE: ./node_modules/is-string/index.js
-var is_string = __webpack_require__(3);
+var is_string = __webpack_require__(2);
 var is_string_default = /*#__PURE__*/__webpack_require__.n(is_string);
 
 // CONCATENATED MODULE: ./node_modules/split-if-boxed-bug-x/dist/split-if-boxed-bug-x.esm.js
@@ -2130,22 +2117,6 @@ var has_own_property_x_esm_hasOwnProperty = function hasOwnProperty(object, prop
 /* harmony default export */ var has_own_property_x_esm = (has_own_property_x_esm_hasOwnProperty);
 
 
-// CONCATENATED MODULE: ./node_modules/is-falsey-x/dist/is-falsey-x.esm.js
-
-/**
- * This method tests if a given value is falsey.
- *
- * @param {*} [value] - The value to test.
- * @returns {boolean} `true` if the value is falsey: otherwise `false`.
- */
-
-var is_falsey_x_esm_isFalsey = function isFalsey(value) {
-  return !to_boolean_x_esm(value);
-};
-
-/* harmony default export */ var is_falsey_x_esm = (is_falsey_x_esm_isFalsey);
-
-
 // CONCATENATED MODULE: ./node_modules/to-string-symbols-supported-x/dist/to-string-symbols-supported-x.esm.js
 
 
@@ -2232,7 +2203,7 @@ var math_clamp_x_esm_clamp = function clamp(value) {
 
 
 
-
+var is_index_x_esm_MAX_SAFE_INTEGER = 9007199254740991;
 var reIsUint = /^(?:0|[1-9]\d*)$/;
 var rxTest = reIsUint.test;
 /**
@@ -2257,10 +2228,10 @@ var is_index_x_esm_isIndex = function isIndex(value, length) {
   var number = to_number_x_esm(string);
 
   if (arguments.length > 1) {
-    return number < math_clamp_x_esm(to_integer_x_esm(length), max_safe_integer_default.a);
+    return number < math_clamp_x_esm(to_integer_x_esm(length), is_index_x_esm_MAX_SAFE_INTEGER);
   }
 
-  return number < max_safe_integer_default.a;
+  return number < is_index_x_esm_MAX_SAFE_INTEGER;
 };
 
 /* harmony default export */ var is_index_x_esm = (is_index_x_esm_isIndex);
@@ -2299,10 +2270,12 @@ var property_is_enumerable_x_esm_propertyIsEnumerable = function propertyIsEnume
 
 
 
-
 /** @type {ObjectConstructor} */
 
 var object_get_own_property_descriptor_x_esm_castObject = {}.constructor;
+/** @type {BooleanConstructor} */
+
+var object_get_own_property_descriptor_x_esm_castBoolean = true.constructor;
 var nativeGOPD = typeof object_get_own_property_descriptor_x_esm_castObject.getOwnPropertyDescriptor === 'function' && object_get_own_property_descriptor_x_esm_castObject.getOwnPropertyDescriptor;
 var getOPDFallback1;
 var getOPDFallback2; // ES5 15.2.3.3
@@ -2370,7 +2343,7 @@ if (nativeGOPD) {
   }
 }
 
-if (is_falsey_x_esm($getOwnPropertyDescriptor) || getOPDFallback1 || getOPDFallback2) {
+if (object_get_own_property_descriptor_x_esm_castBoolean($getOwnPropertyDescriptor) === false || getOPDFallback1 || getOPDFallback2) {
   var prototypeOfObject = object_get_own_property_descriptor_x_esm_castObject.prototype; // If JS engine supports accessors creating shortcuts.
 
   var lookupGetter;
@@ -2525,7 +2498,9 @@ var assert_is_object_x_esm_assertIsObject = function assertIsObject(value) {
 
 
 
+/** @type {BooleanConstructor} */
 
+var object_define_property_x_esm_castBoolean = true.constructor;
 var nativeDefProp = typeof Object.defineProperty === 'function' && Object.defineProperty;
 var definePropertyFallback;
 
@@ -2607,7 +2582,7 @@ if (nativeDefProp) {
 
   var object_define_property_x_esm_doc = typeof document !== 'undefined' && document;
 
-  if (testWorksWith({}) && (is_falsey_x_esm(object_define_property_x_esm_doc) || testWorksWith(object_define_property_x_esm_doc.createElement('div')))) {
+  if (testWorksWith({}) && (object_define_property_x_esm_castBoolean(object_define_property_x_esm_doc) === false || testWorksWith(object_define_property_x_esm_doc.createElement('div')))) {
     $defineProperty = function defineProperty(object, property, descriptor) {
       return nativeDefProp(assert_is_object_x_esm(object), to_property_key_x_esm(property), toPropertyDescriptor(descriptor));
     };
@@ -2616,7 +2591,7 @@ if (nativeDefProp) {
   }
 }
 
-if (is_falsey_x_esm(nativeDefProp) || definePropertyFallback) {
+if (object_define_property_x_esm_castBoolean(nativeDefProp) === false || definePropertyFallback) {
   var object_define_property_x_esm_prototypeOfObject = Object.prototype; // If JS engine supports accessors creating shortcuts.
 
   var defineGetter;
@@ -2751,7 +2726,7 @@ var is_regexp_x_esm_isRegex = function isRegex(value) {
 
 
 // EXTERNAL MODULE: ./node_modules/object-keys/index.js
-var object_keys = __webpack_require__(7);
+var object_keys = __webpack_require__(6);
 var object_keys_default = /*#__PURE__*/__webpack_require__.n(object_keys);
 
 // CONCATENATED MODULE: ./node_modules/object-keys-x/dist/object-keys-x.esm.js
