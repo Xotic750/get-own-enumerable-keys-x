@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-18T00:09:46.609Z",
+  "date": "2019-07-18T22:24:17.326Z",
   "describe": "",
   "description": "Like Reflect.ownKeys but gets only enumerable properties.",
   "file": "get-own-enumerable-keys-x.js",
-  "hash": "23f1fd20eea56cc3f661",
+  "hash": "13e4eabadc308d03a3ce",
   "license": "MIT",
-  "version": "2.0.7"
+  "version": "2.0.8"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -2509,11 +2509,11 @@ var toPropertyDescriptor = function _toPropertyDescriptor(desc) {
   var descriptor = {};
 
   if (has_own_property_x_esm(object, 'enumerable')) {
-    descriptor.enumerable = Boolean(object.enumerable);
+    descriptor.enumerable = object_define_property_x_esm_castBoolean(object.enumerable);
   }
 
   if (has_own_property_x_esm(object, 'configurable')) {
-    descriptor.configurable = Boolean(object.configurable);
+    descriptor.configurable = object_define_property_x_esm_castBoolean(object.configurable);
   }
 
   if (has_own_property_x_esm(object, 'value')) {
@@ -2521,7 +2521,7 @@ var toPropertyDescriptor = function _toPropertyDescriptor(desc) {
   }
 
   if (has_own_property_x_esm(object, 'writable')) {
-    descriptor.writable = Boolean(object.writable);
+    descriptor.writable = object_define_property_x_esm_castBoolean(object.writable);
   }
 
   if (has_own_property_x_esm(object, 'get')) {
