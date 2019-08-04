@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-04T15:17:39.729Z",
+  "date": "2019-08-04T20:34:37.731Z",
   "describe": "",
   "description": "Like Reflect.ownKeys but gets only enumerable properties.",
   "file": "get-own-enumerable-keys-x.js",
