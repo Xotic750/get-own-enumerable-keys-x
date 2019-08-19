@@ -1,7 +1,8 @@
 import toObject from 'to-object-x';
 import objectKeys from 'object-keys-x';
 import getOEPS from 'get-own-enumerable-property-symbols-x';
-var concat = [].concat;
+import methodize from 'simple-methodize-x';
+var concat = methodize([].concat);
 /**
  * This method returns only the enumerable own keys of an object.
  *
@@ -12,7 +13,7 @@ var concat = [].concat;
 
 var getOwnNonEnumerableKeys = function getOwnNonEnumerableKeys(target) {
   var object = toObject(target);
-  return concat.call(objectKeys(object), getOEPS(object));
+  return concat(objectKeys(object), getOEPS(object));
 };
 
 export default getOwnNonEnumerableKeys;
