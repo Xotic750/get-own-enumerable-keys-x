@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-28T15:36:55.909Z",
+  "date": "2019-08-28T17:36:35.451Z",
   "describe": "",
   "description": "Like Reflect.ownKeys but gets only enumerable properties.",
   "file": "get-own-enumerable-keys-x.js",
   "hash": "0fc3f56b5769b78f5a06",
   "license": "MIT",
-  "version": "2.1.1"
+  "version": "2.1.2"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
